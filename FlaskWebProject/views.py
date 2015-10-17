@@ -1,7 +1,7 @@
 from FlaskWebProject import app
 from flask import render_template
 from subprocess import Popen, PIPE, STDOUT
-string = "java -jar D:\home\site\wwwroot\FlaskWebProject\hello.jar"
+string = "java -jar FlaskWebProject\hello.jar"
 
 @app.route("/")
 @app.route("/index")
