@@ -1,10 +1,16 @@
 from FlaskWebProject import app
-from flask import render_template
+from flask import render_template, jsonify, request
 
 
 @app.route("/")
 @app.route("/index")
 def index():
+    return render_template("index_tpl.html")
+
+@app.route("/resp")
+def resp():
+    tag = request.args.get("tag")
+    start_date = request.args.get("start_date")
     #return "Hello world!"
     items = [
         ['2014-06-12', 10, 1],
