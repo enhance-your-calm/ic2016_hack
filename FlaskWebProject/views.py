@@ -31,16 +31,16 @@ def index():
 
     process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
     stdout, stderr = process.communicate()
-    result = stdout.strip()+"\n"+string+"\n\n"
+    result += stdout.strip()+"\n"+string+"\n\n"
 
-#    string = os.path.join(*chunks_java)+" -jar "+os.path.join(*chunks_jar)
-#    process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
-#    stdout, stderr = process.communicate()
-#    result = stdout.strip()+"\n"+string+"\n\n"
+    string = os.path.join(*chunks_java)+" -jar "+os.path.join(*chunks_jar)
+    process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
+    stdout, stderr = process.communicate()
+    result += stdout.strip()+"\n"+string+"\n\n"
 
 #    string = os.path.join(*chunks_cmd)+" "+os.path.join(*chunks_java)+" -jar "+os.path.join(*chunks_jar)
 #    process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
 #    stdout, stderr = process.communicate()
-#    result = stdout.strip()+"\n"+string+"\n\n"
+#    result += stdout.strip()+"\n"+string+"\n\n"
 
     return result
