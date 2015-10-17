@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+{% block head %}
+    <head lang="ru">
+        <meta charset="UTF-8">
+        <title>TONELYZER{% block title_sufix %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='content/main.css') }}"/>
+    </head>
+{% endblock %}
+<body>
+{% block header %}
+    <header>
+        <div class="logo">Tonelyzer</div>
+    </header>
+{% endblock %}
+<article>
+    {% block content %}
+
+    {% endblock %}
+</article>
+{% block footer %}
+    <footer>
+        <div class="sign">Created by "enhance your calm" team</div>
+    </footer>
+{% endblock %}
+{% block scripts %}
+{% endblock %}
+</body>
+</html>
