@@ -11,8 +11,8 @@ def index():
 
 @app.route("/resp")
 def resp():
-    tag = "'"+request.args.get("tag")+"'"
-    start_date = "'"+request.args.get("start_date")+"'"
+    tag = '"'+request.args.get("tag")+'"'
+    start_date = '"'+request.args.get("start_date")+'"'
 
 
     result = tag + "\n"
