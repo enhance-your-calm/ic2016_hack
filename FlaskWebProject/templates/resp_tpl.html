@@ -1,0 +1,46 @@
+{% extends "base_tpl.html" %}
+{% block title_sufix %} - #{{ cur_tag }}{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='content/vis.min.css') }}"/>
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <div class="graph-wrapper">
+        <h2>#{{cur_tag}}</h2>
+        <div id="visualization" class="graph"></div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='scripts/vis.min.js') }}"></script>
+    <script>
+        var graph_container = document.getElementById('visualization');
+
+        var groups = new vis.DataSet();
+
+        groups.add({
+            id : 1,
+            content: 'Positive',
+            className: 'positive-item'
+        })
+
+        groups.add({
+            id : 2,
+            content: 'Negative',
+            className: 'negative-item'
+        })
+
+        var items = [
+            {% for item in items %} {x: '{{ item[0] }}', y: {{ item[1] }}, group: {{ item[2] }}}, {% endfor %}
+          ];
+        var dataset = new vis.DataSet(items);
+
+        var options = {
+            drawPoints: false,
+            style: 'bar',
+            start: '{{ start_date }}',
+            end: '{{ end_date }}'
+        };
+        var Graph2d = new vis.Graph2d(graph_container, dataset, groups, options);
+    </script>
+{% endblock %}
