@@ -21,6 +21,7 @@ chunks_jar = ["D:"+os.sep,
         "wwwroot",
         "FlaskWebProject",
         "hello.jar"]
+chunks_cmd = ["D:"+os.sep, "Windows", "System32", "cmd.exe"]
 
 
 @app.route("/")
@@ -28,19 +29,18 @@ chunks_jar = ["D:"+os.sep,
 def index():
     result = sys.executable+"\n\n"
 
-    process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
-    stdout, stderr = process.communicate()
-    result = stdout.strip()+"\n"+string+"\n\n"
+#    process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
+#    stdout, stderr = process.communicate()
+#    result = stdout.strip()+"\n"+string+"\n\n"
 
-    string = os.path.join(*chunks_java)+" -jar "+os.path.join(*chunks_jar)
-    process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
-    stdout, stderr = process.communicate()
-    result = stdout.strip()+"\n"+string+"\n\n"
+#    string = os.path.join(*chunks_java)+" -jar "+os.path.join(*chunks_jar)
+#    process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
+#    stdout, stderr = process.communicate()
+#    result = stdout.strip()+"\n"+string+"\n\n"
 
-    chunks_cmd = ["D:"+os.sep, "Windows", "System32", "cmd.exe"]
-    string = os.path.join(*chunks_cmd)+" "+os.path.join(*chunks_java)+" -jar "+os.path.join(*chunks_jar)
-    process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
-    stdout, stderr = process.communicate()
-    result = stdout.strip()+"\n"+string+"\n\n"
+#    string = os.path.join(*chunks_cmd)+" "+os.path.join(*chunks_java)+" -jar "+os.path.join(*chunks_jar)
+#    process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
+#    stdout, stderr = process.communicate()
+#    result = stdout.strip()+"\n"+string+"\n\n"
 
     return result
