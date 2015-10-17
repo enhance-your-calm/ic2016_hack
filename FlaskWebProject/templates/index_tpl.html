@@ -1,7 +1,7 @@
 {% extends "base_tpl.html" %}
 {% block content %}
     <div class="tag-form-wrapper">
-        <form action="/resp" method="get" class="tag-form">
+        <form action="/resp" method="get" class="tag-form" id="tag-form">
             <div class="form-header">
                 <h2>Write #tag and get it`s emotional tone</h2>
             </div>
@@ -16,7 +16,7 @@
                     -
                     <input type="date" name="end_date" class="date-input" id="end_date"/>
                 </fieldset>
-                <input type="submit" value="tonelyze" class="btn">
+                <input type="submit" value="tonelyze" class="btn" id="sub_mit">
             </div>
         </form>
     </div>
@@ -49,5 +49,17 @@
         end_date_input.value = true_html_date(end_date);
         end_date_input.setAttribute('max', true_html_date(end_date));
         end_date_input.setAttribute('min', "2015-09-01");
+
+
+        document.getElementById("sub_mit").addEventListener("click",function(){
+            var start_date_input = document.getElementById('start_date').value;
+            var end_date_input = document.getElementById('end_date').value;
+            var tag = document.getElementById("tag").value;
+            if (end_date_input > start_date_input) && (tag !== '') {
+                document.getElementById('tag-form').submit()}
+            else {document.getElementById("tag-form").Write("error")}
+
+        })
+
     </script>
 {% endblock %}
