@@ -29,9 +29,9 @@ chunks_cmd = ["D:"+os.sep, "Windows", "System32", "cmd.exe"]
 def index():
     result = sys.executable+"\n\n"
 
-#    process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
-#    stdout, stderr = process.communicate()
-#    result = stdout.strip()+"\n"+string+"\n\n"
+    process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
+    stdout, stderr = process.communicate()
+    result = stdout.strip()+"\n"+string+"\n\n"
 
 #    string = os.path.join(*chunks_java)+" -jar "+os.path.join(*chunks_jar)
 #    process = Popen(string, shell=True, stdout=PIPE, stderr=PIPE)
