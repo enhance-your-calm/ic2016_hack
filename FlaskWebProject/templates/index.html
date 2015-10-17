@@ -12,7 +12,7 @@
     </header>
     <article>
         <div class="tag-form-wrapper">
-            <form action="" method="post" class="tag-form">
+            <form action="/as" method="post" class="tag-form">
                 <div class="form-header">
                     <h2>Write #tag and get it`s emotional tone</h2>
                 </div>
@@ -23,9 +23,9 @@
                     </fieldset>
                     <fieldset class="date-interval-wrapper">
                         <span class="input-date-header">Период времени</span>
-                        <input type="text" name="start_date" id="start_date" class="date-input" value=""/>
+                        <input type="date" name="start_date" id="start_date" class="date-input" value=""/>
                         -
-                        <input type="text" name="end_date" class="date-input" id="end_date"/>
+                        <input type="date" name="end_date" class="date-input" id="end_date"/>
                     </fieldset>
                     <input type="submit" value="tonelyze" class="btn">
                 </div>
@@ -36,6 +36,32 @@
     <footer>
         <div class="sign">Created by "enhance your calm" team</div>
     </footer>
-    <!--<script type="javascript" language="JavaScript" src="lib/js/tcal.js"></script>-->
+    <script type="text/javascript">
+
+        function true_html_date(date) {
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            month = month.toString();
+            if (month.length == 1) {
+                month = '0' + month;
+            }
+            var year = date.getFullYear();
+            return year.toString() + '-' + month + '-' + day.toString()
+            }
+
+        var end_date = new Date();
+        var start_date = new Date();
+        start_date.setDate(end_date.getDate() - 7);
+
+        var start_date_input = document.getElementById('start_date');
+        start_date_input.value = true_html_date(start_date);
+        start_date_input.setAttribute('max', true_html_date(end_date));
+        start_date_input.setAttribute('min', "2015-09-01");
+
+        var end_date_input = document.getElementById('end_date');
+        end_date_input.value = true_html_date(end_date);
+        end_date_input.setAttribute('max', true_html_date(end_date));
+        end_date_input.setAttribute('min', "2015-09-01");
+    </script>
 </body>
 </html>

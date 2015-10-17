@@ -22,13 +22,13 @@
             id : 1,
             content: 'Positive',
             className: 'positive-item'
-        })
+        });
 
         groups.add({
             id : 2,
             content: 'Negative',
             className: 'negative-item'
-        })
+        });
 
         var items = [
             {% for item in items %} {x: '{{ item[0] }}', y: {{ item[1] }}, group: {{ item[2] }}}, {% endfor %}
@@ -39,7 +39,8 @@
             drawPoints: false,
             style: 'bar',
             start: '{{ start_date }}',
-            end: '{{ end_date }}'
+            end: '{{ end_date }}',
+            zoomMax: 31536000000
         };
         var Graph2d = new vis.Graph2d(graph_container, dataset, groups, options);
     </script>

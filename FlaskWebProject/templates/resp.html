@@ -30,22 +30,22 @@
             id : 1,
             content: 'Positive',
             className: 'positive-item'
-        })
+        });
 
         groups.add({
             id : 2,
             content: 'Negative',
             className: 'negative-item'
-        })
+        });
 
         var items = [
-              {x: '2014-06-12', y: 10, group: 1},
-              {x: '2014-06-12', y: -25, group: 2},
-              {x: '2014-06-13', y: 30, group: 1},
-              {x: '2014-06-13', y: -10, group: 2},
-              {x: '2014-06-15', y: 15, group: 1},
-              {x: '2014-06-15', y: -15, group: 2},
-              {x: '2014-06-16', y: 30, group: 1}
+              {x: '2014-06-12', y: 10, group: 1, label: {content: '10'}},
+              {x: '2014-06-12', y: -25, group: 2, label: {content: '-25'}},
+              {x: '2014-06-13', y: 30, group: 1, label: {content: '30'}},
+              {x: '2014-06-13', y: -10, group: 2, label: {content: '-10'}},
+              {x: '2014-06-15', y: 15, group: 1, label: {content: '15'}},
+              {x: '2014-06-15', y: -15, group: 2, label: {content: '15'}},
+              {x: '2014-06-16', y: 30, group: 1, label: {content: '40'}}
           ];
         var dataset = new vis.DataSet(items);
 
@@ -53,7 +53,8 @@
             drawPoints: false,
             style: 'bar',
             start: '2014-06-10',
-            end: '2014-06-18'
+            end: '2014-06-18',
+            zoomMax: 31536000000
         };
         var Graph2d = new vis.Graph2d(graph_container, dataset, groups, options);
     </script>
