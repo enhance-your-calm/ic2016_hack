@@ -75,7 +75,7 @@ header .logo {
 }
 .tag-form-wrapper {
   background: #fdfdfd;
-  width: 640px;
+  width: 740px;
   padding: 50px;
   margin: auto;
   font-size: 22px;
@@ -87,6 +87,7 @@ header .logo {
 .tag-form-wrapper .form-header {
   text-align: center;
   margin-bottom: 25px;
+  line-height: 1.7em;
 }
 .tag-form-wrapper .form-header::after {
   content: "";
@@ -111,21 +112,23 @@ header .logo {
   background: url("../img/pound.png");
   margin-bottom: -4px;
 }
-.tag-form-wrapper input[type="text"] {
+.tag-form-wrapper input[type="text"],
+.tag-form-wrapper input[type="date"] {
   border: 2px solid #aaa;
   padding: 0 5px;
   font-size: 22px;
   line-height: 32px;
 }
-.tag-form-wrapper input[type="text"]:focus {
+.tag-form-wrapper input[type="text"]:focus,
+.tag-form-wrapper input[type="date"]:focus {
   border: 2px solid #681899;
 }
 .tag-form-wrapper .tag-input {
   margin-left: 4px;
-  width: 20em;
+  width: 21em;
 }
 .tag-form-wrapper .date-input {
-  width: 6em;
+  width: 10em;
 }
 .tag-form-wrapper .btn {
   margin: 20px;
