@@ -1,8 +1,8 @@
 from FlaskWebProject import app
 from flask import render_template
 from subprocess import Popen, PIPE, STDOUT
-java_path = r"D:\Program Files (x86)\Java\jdk1.8.0_25\bin\java"
-jar_path = r"D:\home\site\wwwroot\FlaskWebProject\hello.jar"
+java_path = "D:\\Program Files (x86)\\Java\\jdk1.8.0_25\\bin\\java"
+jar_path = "D:\\home\\site\\wwwroot\\FlaskWebProject\\hello.jar"
 #string = "java -jar ~/dev/ic2016_hack/FlaskWebProject/hello.jar"
 #string = "pwd"
 string = java_path+" -jar "+jar_path
