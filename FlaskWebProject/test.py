@@ -56,4 +56,3 @@ print result
 #    stdout, stderr = process.communicate()
 #    result += stdout.strip()+"\n"+string+"\n\n"
 
-return result
