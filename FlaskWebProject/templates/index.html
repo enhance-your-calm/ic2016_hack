@@ -2,24 +2,24 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>TONALYSER</title>
+    <title>TONELYZER</title>
     <!--<link rel="stylesheet" href="lib/css/tcal.css">-->
-    <link rel="stylesheet" href="/static/content/main.css"/>
+    <link rel="stylesheet" href="../static/content/main.css"/>
 </head>
 <body>
     <header>
-        <div class="logo">Tonalyser</div>
+        <div class="logo">Tonelyzer</div>
     </header>
     <article>
         <div class="tag-form-wrapper">
-            <form action="#" method="post" class="tag-form">
+            <form action="" method="post" class="tag-form">
                 <div class="form-header">
                     <h2>Write #tag and get it`s emotional tone</h2>
                 </div>
                 <div class="form-content">
                     <fieldset class="tag-wrapper">
                         <label for="tag"><span class="hashtag"></span></label>
-                        <input type="text" id="tag" class="tag-input" placeholder="tag"/>
+                        <input type="text" id="tag" class="tag-input" name="tag" placeholder="tag"/>
                     </fieldset>
                     <fieldset class="date-interval-wrapper">
                         <span class="input-date-header">Период времени</span>
@@ -27,13 +27,15 @@
                         -
                         <input type="text" name="end_date" class="date-input" id="end_date"/>
                     </fieldset>
-                    <input type="submit" value="tonalyse" class="btn">
+                    <input type="submit" value="tonelyze" class="btn">
                 </div>
             </form>
         </div>
 
     </article>
-    <footer></footer>
+    <footer>
+        <div class="sign">Created by "enhance your calm" team</div>
+    </footer>
     <!--<script type="javascript" language="JavaScript" src="lib/js/tcal.js"></script>-->
 </body>
 </html>

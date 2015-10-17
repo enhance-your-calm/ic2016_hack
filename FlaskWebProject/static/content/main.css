@@ -57,8 +57,14 @@ keygen,
 select,
 button {
   font-family: 'Exo 2';
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
+}
+h2 {
+  color: #4A116D;
+  font-weight: 400;
+  margin: 1em;
+  font-size: 2em;
 }
 header .logo {
   margin: 40px 60px;
@@ -69,7 +75,7 @@ header .logo {
 }
 .tag-form-wrapper {
   background: #fdfdfd;
-  width: 540px;
+  width: 640px;
   padding: 50px;
   margin: auto;
   font-size: 22px;
@@ -82,11 +88,6 @@ header .logo {
   text-align: center;
   margin-bottom: 25px;
 }
-.tag-form-wrapper .form-header h2 {
-  color: #4A116D;
-  font-weight: 400;
-  margin-bottom: 20px;
-}
 .tag-form-wrapper .form-header::after {
   content: "";
   display: block;
@@ -96,6 +97,7 @@ header .logo {
 }
 .tag-form-wrapper fieldset {
   border: none;
+  margin: 15px 0;
 }
 .tag-form-wrapper .tag-wrapper label {
   display: inline-block;
@@ -143,9 +145,29 @@ header .logo {
 .btn:active {
   outline: none;
 }
-.graf-wrapper {
+.graph-wrapper {
   width: 970px;
   margin: auto;
+  padding: 20px;
   background: #fdfdfd;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.graph-wrapper .graph {
+  height: 500px;
+}
+.vis-content .vis-bar {
+  fill-opacity: 1;
+}
+.vis-content .negative-item {
+  fill: #AE463D;
+}
+.vis-content .positive-item {
+  fill: #2F853E;
+}
+footer {
+  margin-top: 55px;
+  padding: 40px;
+  min-height: 150px;
+  background: rgba(74, 17, 109, 0.8);
+  color: #dfdfdf;
 }

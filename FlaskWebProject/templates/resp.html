@@ -2,38 +2,60 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>TONALYSER - # {tag}</title>
+    <title>TONELYZER - #{tag}</title>
     <!--<link rel="stylesheet" href="lib/css/tcal.css">-->
-    <link rel="stylesheet" href="/static/content/vis.min.css"/>
-    <link rel="stylesheet" href="/static/content/main.css"/>
+    <link rel="stylesheet" href="../static/content/vis.min.css"/>
+    <link rel="stylesheet" href="../static/content/main.css"/>
 </head>
 <body>
     <header>
-        <div class="logo">Tonalyser</div>
+        <div class="logo">Tonelyzer</div>
     </header>
     <article>
-        <div id="visualization" class="graf-wrapper"></div>
+        <div class="graph-wrapper">
+            <h2>#{tag}</h2>
+            <div id="visualization" class="graph"></div>
+        </div>
     </article>
     <footer>
+        <div class="sign">Created by "enhance your calm" team</div>
     </footer>
-    <script src="/static/js/vis.min.js"></script>
+    <script src="../static/scripts/vis.min.js"></script>
     <script>
-        var graf_container = document.getElementById('visualization');
-  var items = [
-      {x: '2014-06-11', y: 10},
-      {x: '2014-06-12', y: 25},
-      {x: '2014-06-13', y: 30},
-      {x: '2014-06-14', y: 10},
-      {x: '2014-06-15', y: 15},
-      {x: '2014-06-16', y: 30}
-  ];
+        var graph_container = document.getElementById('visualization');
 
-  var dataset = new vis.DataSet(items);
-  var options = {
-      start: '2014-06-10',
-      end: '2014-06-18'
-  };
-  var Graph2d = new vis.Graph2d(graf_container, dataset, options);
+        var groups = new vis.DataSet();
+
+        groups.add({
+            id : 1,
+            content: 'Positive',
+            className: 'positive-item'
+        })
+
+        groups.add({
+            id : 2,
+            content: 'Negative',
+            className: 'negative-item'
+        })
+
+        var items = [
+              {x: '2014-06-12', y: 10, group: 1},
+              {x: '2014-06-12', y: -25, group: 2},
+              {x: '2014-06-13', y: 30, group: 1},
+              {x: '2014-06-13', y: -10, group: 2},
+              {x: '2014-06-15', y: 15, group: 1},
+              {x: '2014-06-15', y: -15, group: 2},
+              {x: '2014-06-16', y: 30, group: 1}
+          ];
+        var dataset = new vis.DataSet(items);
+
+        var options = {
+            drawPoints: false,
+            style: 'bar',
+            start: '2014-06-10',
+            end: '2014-06-18'
+        };
+        var Graph2d = new vis.Graph2d(graph_container, dataset, groups, options);
     </script>
 </body>
 </html>
