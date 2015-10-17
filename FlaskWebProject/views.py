@@ -1,4 +1,5 @@
 from FlaskWebProject import app
+from subprocess import Popen, PIPE, STDOUT
 from flask import render_template, jsonify, request
 
 
@@ -11,6 +12,16 @@ def index():
 def resp():
     tag = request.args.get("tag")
     start_date = request.args.get("start_date")
+    result = tag + "\n"
+    result += start_date + "\n"
+
+    parser_machine = Popen(["java", "-jar", "parse.jar", tag, start_date],
+            stdout=PIPE, stderr=PIPE, shell=True)
+    stdout = parser_machine.communicate()[0]
+    stdout = stdout.decode().strip()
+    result+=stdout
+    return result
+    
     #return "Hello world!"
     items = [
         ['2014-06-12', 10, 1],
